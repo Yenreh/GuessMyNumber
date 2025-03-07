@@ -3,10 +3,12 @@ body {
     background-color: #f2f2f2;
     text-align: center;
     padding: 50px;
+    margin: 0;
 }
 
 h1 {
     color: #333;
+    font-size: 2em;
 }
 
 p {
@@ -20,9 +22,11 @@ form {
 
 input[type="text"] {
     padding: 10px;
-    width: 200px;
+    width: 250px;
+    max-width: 80%;
     border: 1px solid #ccc;
     border-radius: 4px;
+    font-size: 1em;
 }
 
 button {
@@ -33,6 +37,7 @@ button {
     color: white;
     font-size: 1em;
     cursor: pointer;
+    margin-top: 10px;
 }
 
 button:hover {
@@ -42,4 +47,28 @@ button:hover {
 button:disabled {
     background-color: lightgray;
     cursor: not-allowed;
+}
+
+/* Mobile Styles */
+@media (max-width: 600px) {
+    body {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.5em;
+    }
+
+    p, input[type="text"], button {
+        font-size: 1em;
+    }
+
+    input[type="text"] {
+        width: 90%;
+    }
+
+    button {
+        width: 85%;
+        padding: 12px;
+    }
 }
