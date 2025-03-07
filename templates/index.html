@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Guess My Number</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<h1>Guess My Number</h1>
+<p>{{ message }}</p>
+
+{% if not max_number %}
+<!-- Form to set maximum number -->
+<form action="{{ url_for('set_max') }}" method="post">
+    <input type="text" name="max_number" placeholder="Enter maximum number">
+    <button type="submit">Set Max</button>
+</form>
+{% else %}
+<!-- Show current max number -->
+{% if not(game_over) %}
+<p>Guess a number between 1 and {{ max_number }} !</p>
+{% endif %}
+<!-- Guess form -->
+<form action="{{ url_for('guess') }}" method="post">
+    <input type="text" name="guess" placeholder="Enter your guess" {% if game_over %}disabled{% endif %}>
+    <button type="submit" {% if game_over %}disabled{% endif %}>Guess</button>
+</form>
+{% if game_over %}
+<form action="{{ url_for('new_game') }}" method="get" style="margin-top: 20px;">
+    <button type="submit">New Game</button>
+</form>
+{% endif %}
+{% endif %}
+</body>
+</html>
