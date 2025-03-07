@@ -7,8 +7,9 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-<h1>Guess My Number</h1>
-<p>{{ message }}</p>
+<div class="container">
+    <h1>Guess My Number</h1>
+    <p>{{ message }}</p>
 
 {% if not max_number %}
 <!-- Form to set maximum number -->
@@ -32,5 +33,6 @@
 </form>
 {% endif %}
 {% endif %}
+</div>
 </body>
 </html>

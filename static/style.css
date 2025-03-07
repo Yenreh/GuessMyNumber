@@ -1,14 +1,28 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f2f2f2;
-    text-align: center;
-    padding: 50px;
-    margin: 0;
+/* Apply border-box model for predictable sizing */
+* {
+    box-sizing: border-box;
 }
 
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f2f2f2;
+}
+
+.container {
+    padding: 50px;
+    text-align: center;
+    width: 100%;
+}
+
+/* Heading & Text */
 h1 {
     color: #333;
     font-size: 2em;
+    margin-bottom: 20px;
 }
 
 p {
@@ -16,6 +30,7 @@ p {
     margin-bottom: 20px;
 }
 
+/* Forms & Inputs */
 form {
     margin-top: 20px;
 }
@@ -29,6 +44,7 @@ input[type="text"] {
     font-size: 1em;
 }
 
+/* Buttons */
 button {
     padding: 10px 15px;
     border: none;
@@ -51,7 +67,7 @@ button:disabled {
 
 /* Mobile Styles */
 @media (max-width: 600px) {
-    body {
+    .container {
         padding: 20px;
     }
 
@@ -68,7 +84,7 @@ button:disabled {
     }
 
     button {
-        width: 85%;
+        width: 80%;
         padding: 12px;
     }
 }
